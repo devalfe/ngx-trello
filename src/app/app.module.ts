@@ -1,13 +1,14 @@
-import { SharedModule } from './shared/shared.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-import { CoreModule } from './core/core.module';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { AuthModule } from './auth/auth.module';
+import { AppRoutingModule } from './app-routing.module';
+import { RouterModule } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PagesModule } from './pages/pages.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,9 +20,10 @@ import { AuthModule } from './auth/auth.module';
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
     }),
-    CoreModule,
-    SharedModule,
-    AuthModule
+    RouterModule,
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    PagesModule
   ],
   providers: [],
   bootstrap: [AppComponent],
