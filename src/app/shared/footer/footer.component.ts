@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { environment as env } from '../../../environments/environment';
 
 @Component({
   selector: 'ngx-footer',
@@ -6,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
+  public readonly anio = new Date().getFullYear();
+  public readonly appVersion = env.versions.appVersion;
+  public readonly appName = env.appName;
+  public readonly envName = env.envName;
+
   constructor() {}
 
   ngOnInit(): void {}
