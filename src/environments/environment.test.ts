@@ -2,9 +2,9 @@ const packageJson = require('../../package.json');
 
 export const environment = {
   appName: 'trello',
-  envName: 'PROD',
-  production: true,
-  test: false,
+  envName: 'TEST',
+  production: false,
+  test: true,
   versions: {
     appVersion: packageJson.version,
     angular: packageJson.dependencies['@angular/core'],
