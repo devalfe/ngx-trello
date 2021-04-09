@@ -1,13 +1,33 @@
 {
   "name": "ngx-trello",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --open",
     "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "test": "npm run lint && ng test --configuration=test",
+    "e2e": "ng e2e",
+    "lint": "eslint --color -c .eslintrc --ext .ts .",
+    "lint:styles": "stylelint ./src/**/*.scss",
+    "build:ci": "npm run format:test && npm run lint && ng test --configuration=test --browsers ChromeTravisCi --code-coverage && npm run build:prod -- --deploy-url /trello/ --base-href /trello/",
+    "build:test": "ng build --configuration=test --output-path=../dist_test/trello --base-href=/trello/",
+    "build:prod": "ng build -- --prod --configuration=production --output-path=../dist_production/trello --base-href=/trello/",
+    "format:write": "prettier src/**/*.{ts,tsx,js,jsx,json,md,css,scss,html} --write",
+    "format:test": "prettier src/**/*.{ts,json,md,scss} --list-different",
+    "release": "standard-version && git push --follow-tags origin release",
+    "clean": "rm -rf ./dist/",
+    "prod": "npm run clean && npm run build:prod"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   },
   "private": true,
   "dependencies": {
@@ -19,6 +39,14 @@
     "@angular/platform-browser": "~11.2.3",
     "@angular/platform-browser-dynamic": "~11.2.3",
     "@angular/router": "~11.2.3",
+    "@angular/service-worker": "~11.2.3",
+    "@fortawesome/angular-fontawesome": "^0.8.0",
+    "@fortawesome/fontawesome-free": "^5.15.1",
+    "@fortawesome/fontawesome-svg-core": "^1.2.32",
+    "@fortawesome/free-brands-svg-icons": "^5.15.1",
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "bootstrap": "^4.5.3",
+    "popper.js": "^1.16.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"
@@ -40,6 +68,27 @@
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
-    "typescript": "~4.1.2"
+    "typescript": "~4.1.2",
+    "@angular-eslint/eslint-plugin": "^0.6.0-beta.0",
+    "@commitlint/cli": "^12.0.1",
+    "@commitlint/config-conventional": "^12.0.1",
+    "@types/jasminewd2": "~2.0.3",
+    "@typescript-eslint/eslint-plugin": "^4.14.0",
+    "@typescript-eslint/eslint-plugin-tslint": "^4.7.0",
+    "@typescript-eslint/parser": "^4.14.0",
+    "eslint": "^7.18.0",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.3.1",
+    "husky": "^4.3.8",
+    "lint-staged": "^10.5.3",
+    "npm-run-all": "^4.1.5",
+    "prettier": "2.2.1",
+    "pretty-quick": "^3.1.0",
+    "rimraf": "^3.0.2",
+    "standard-version": "^9.0.0",
+    "stylelint": "^13.12.0",
+    "stylelint-config-standard": "^20.0.0",
+    "webpack-bundle-analyzer": "^4.1.0"
   }
 }
