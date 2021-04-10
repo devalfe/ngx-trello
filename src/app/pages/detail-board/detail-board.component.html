@@ -22,16 +22,14 @@
       <div class="col-11">
         <owl-carousel-o [options]="customOptions">
           <ng-template carouselSlide *ngFor="let card of board.cards">
-            <div class="card">
+            <div class="card card-board">
               <p class="title-board p-2 font-weight-bold">{{card.name}}-{{card.id}}</p>
-              <P class="d-flex justify-content-center btn-new-card ">
+              <li *ngFor="let list of card.lists" style="cursor: pointer;" class="list-card m-1" href="#popup1">
+                {{list.title}}
+              </li>
+              <p class="d-flex mt-4 justify-content-center btn-new-card ">
                 + Add new card
-              </P>
-              <!-- <div class="d-flex align-content-around">
-                <div class="footer-board pl-2 pb-2" *ngFor="let collaborator of board.collaborators">
-                  <img class="rounded-circle circle-image" src="{{imgApi}}{{collaborator.uid}}.jpg" alt="user">
-                </div>
-              </div> -->
+              </p>
             </div>
           </ng-template>
         </owl-carousel-o>
@@ -39,4 +37,4 @@
     </div>
   </div>
 </section>
-<pre class="text-white">{{board | json}}</pre>
+<!-- <pre class="text-white">{{board | json}}</pre> -->
