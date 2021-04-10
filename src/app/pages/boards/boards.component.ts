@@ -10,6 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class BoardsComponent implements OnInit {
   public boards$: Observable<Board[]>;
+  public othersBoards$: Observable<Board[]>;
   customOptions: any = {
     loop: true,
     margin: 8,
@@ -40,11 +41,8 @@ export class BoardsComponent implements OnInit {
   };
   constructor(public boardService: BoardService) {
     this.boards$ = this.boardService.listBoards();
+    this.othersBoards$ = this.boardService.listOthersBoards();
   }
 
-  ngOnInit(): void {
-    // this.boardService.listBoards().subscribe((boards: Board[]) => {
-    //   console.log(boards);
-    // });
-  }
+  ngOnInit(): void {}
 }
