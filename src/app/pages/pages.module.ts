@@ -8,9 +8,10 @@ import { PagesRoutingModule } from './pages-routing.module';
 import { PagesComponent } from './pages.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BoardsComponent } from './boards/boards.component';
+import { DetailBoardComponent } from './detail-board/detail-board.component';
 
 @NgModule({
-  declarations: [PagesComponent, BoardsComponent],
+  declarations: [PagesComponent, BoardsComponent, DetailBoardComponent],
   imports: [
     CommonModule,
     PagesRoutingModule,
