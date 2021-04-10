@@ -11,9 +11,10 @@
         <div class="card">
           <p class="title-board pl-2">{{board.boardName}}-{{board.id}}</p>
           <br>
-          <div class="footer-board pl-2 pb-2">
-            <img class="rounded-circle circle-image"
-              src="https://pickaface.net/gallery/avatar/unr_trello_181123_1600_c8zx.png" alt="user">
+          <div class="d-flex align-content-around">
+            <div class="footer-board pl-2 pb-2" *ngFor="let collaborator of board.collaborators">
+              <img class="rounded-circle circle-image" src="{{imgApi}}{{collaborator.uid}}.jpg" alt="user">
+            </div>
           </div>
         </div>
       </ng-template>
@@ -32,9 +33,12 @@
         <div class="card">
           <p class="title-board pl-2">{{board.boardName}}-{{board.id}}</p>
           <br>
-          <div class="footer-board pl-2 pb-2">
-            <img class="rounded-circle circle-image"
-              src="https://ui-avatars.com/api/?background=0D8ABC&color=fff&name=Delix+Devalfe" alt="user">
+          <div class="d-flex align-content-around">
+            <div class="footer-board pl-2 pb-2" *ngFor="let collaborator of board.collaborators">
+              <img class="rounded-circle circle-image"
+                src="{{imgNameApi}}?background={{collaborator.color}}&color=fff&name={{collaborator.firstName}}+{{collaborator.lastName}}"
+                alt="user">
+            </div>
           </div>
         </div>
       </ng-template>

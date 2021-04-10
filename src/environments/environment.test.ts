@@ -14,5 +14,7 @@ export const environment = {
     angularCli: packageJson.devDependencies['@angular/cli'],
     typescript: packageJson.devDependencies['typescript'],
     eslint: packageJson.devDependencies['eslint']
-  }
+  },
+  imagenApi: 'https://randomuser.me/api/portraits/med/men/',
+  imagenNameApi: 'https://ui-avatars.com/api/'
 };

@@ -2,6 +2,7 @@ import { BoardService } from './../../data/mock/board.service';
 import { Component, OnInit } from '@angular/core';
 import { Board } from 'src/app/data/model/board';
 import { Observable } from 'rxjs';
+import { environment as env } from '../../../environments/environment';
 
 @Component({
   selector: 'ngx-boards',
@@ -11,6 +12,9 @@ import { Observable } from 'rxjs';
 export class BoardsComponent implements OnInit {
   public boards$: Observable<Board[]>;
   public othersBoards$: Observable<Board[]>;
+  public readonly imgApi = env.imagenApi;
+  public readonly imgNameApi = env.imagenNameApi;
+
   customOptions: any = {
     loop: true,
     margin: 8,
