@@ -9,6 +9,7 @@ import { PagesComponent } from './pages.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BoardsComponent } from './boards/boards.component';
 import { DetailBoardComponent } from './detail-board/detail-board.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [PagesComponent, BoardsComponent, DetailBoardComponent],
@@ -18,7 +19,8 @@ import { DetailBoardComponent } from './detail-board/detail-board.component';
     SharedModule,
     CoreModule,
     CarouselModule,
-    DataModule
+    DataModule,
+    ReactiveFormsModule
   ]
 })
 export class PagesModule {}

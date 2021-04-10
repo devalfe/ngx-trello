@@ -1,3 +1,5 @@
+import { Swal2Service } from './../../data/mock/swal2.service';
+import { Comments, Labels, List } from './../../data/model/list';
 import { Component, OnInit } from '@angular/core';
 import { BoardService } from '../../data/mock/board.service';
 import { Board } from '../../data/model/board';
@@ -6,6 +8,7 @@ import { from } from 'rxjs';
 import { environment as env } from '../../../environments/environment';
 import { ActivatedRoute } from '@angular/router';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 @Component({
   selector: 'ngx-detail-board',
   templateUrl: './detail-board.component.html',
@@ -17,6 +20,12 @@ export class DetailBoardComponent implements OnInit {
   public board: Board;
   public uId: string;
   public closeResult = '';
+  public userForm: FormGroup;
+  public cardForm: FormGroup;
+  public itemForm: FormGroup;
+  public labels: Labels[];
+  public comments: Comments[];
+
   customOptions: any = {
     loop: true,
     margin: 8,
@@ -48,8 +57,13 @@ export class DetailBoardComponent implements OnInit {
   constructor(
     public boardService: BoardService,
     private activatedRoute: ActivatedRoute,
-    private modalService: NgbModal
+    private modalService: NgbModal,
+    private formBuilder: FormBuilder,
+    public sal2Service: Swal2Service
   ) {
+    this.formUser();
+    this.formCard();
+    this.formItem();
     this.activatedRoute.params.subscribe((params: any) => {
       this.uId = params.id;
     });
@@ -61,6 +75,28 @@ export class DetailBoardComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+
+  formUser(): void {
+    this.userForm = this.formBuilder.group({
+      email: ['', [Validators.required, Validators.email]]
+    });
+  }
+
+  formCard(): void {
+    this.cardForm = this.formBuilder.group({
+      title: ['', [Validators.required, Validators.minLength(3)]]
+    });
+  }
+  formItem(): void {
+    this.itemForm = this.formBuilder.group({
+      id: [''],
+      title: ['', Validators.required],
+      description: ['', Validators.minLength(8)],
+      label: [''],
+      comments: [''],
+      comment: ['', Validators.minLength(8)]
+    });
+  }
 
   openModalUser(content) {
     this.modalService
@@ -86,7 +122,12 @@ export class DetailBoardComponent implements OnInit {
         }
       );
   }
-  openModalList(item) {
+  openModalList(item, lists: List) {
+    this.itemForm.controls.title.setValue(lists.title);
+    this.itemForm.controls.description.setValue(lists.description);
+    this.labels = lists.labels;
+    this.comments = lists.comments;
+
     this.modalService
       .open(item, { ariaLabelledBy: 'modal-basic-title' })
       .result.then(
