@@ -15,6 +15,7 @@ export class BoardsComponent implements OnInit {
   public othersBoards$: Observable<Board[]>;
   public readonly imgApi = env.imagenApi;
   public readonly imgNameApi = env.imagenNameApi;
+  public boards: Board[];
 
   customOptions: any = {
     loop: true,
@@ -45,7 +46,7 @@ export class BoardsComponent implements OnInit {
     }
   };
   constructor(public boardService: BoardService, private router: Router) {
-    this.boards$ = this.boardService.listBoards();
+    this.boards = JSON.parse(localStorage.getItem('boards')); // this.boardService.listBoards();
     this.othersBoards$ = this.boardService.listOthersBoards();
   }
 

@@ -67,7 +67,8 @@ export class DetailBoardComponent implements OnInit {
     this.activatedRoute.params.subscribe((params: any) => {
       this.uId = params.id;
     });
-    const valor = from(this.boardService.boards)
+    const boardC: Board[] = JSON.parse(localStorage.getItem('boards')) || [];
+    const valor = from(boardC)
       .pipe(filter((search) => search.id === this.uId))
       .subscribe((board) => {
         this.board = board;
@@ -138,6 +139,19 @@ export class DetailBoardComponent implements OnInit {
           this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
         }
       );
+  }
+
+  addUser(): void {
+    if (this.userForm.valid) {
+      this.boardService.addCollaborator(this.board);
+      this.userForm.reset();
+    }
+  }
+  addCard(): void {
+    if (this.cardForm.valid) {
+      this.boardService.addCard(this.board, this.cardForm.value.title);
+      this.cardForm.reset();
+    }
   }
 
   private getDismissReason(reason: any): string {

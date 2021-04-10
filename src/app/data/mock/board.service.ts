@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
+import { from } from 'rxjs';
 import { of as observableOf, Observable } from 'rxjs';
+import { filter } from 'rxjs/operators';
 import { Board } from '../model/board';
+import { Collaborators } from '../model/collaborators';
 
 @Injectable({
   providedIn: 'root'
@@ -1419,12 +1422,55 @@ export class BoardService {
       ]
     }
   ];
-  constructor() {}
+  constructor() {
+    const recoverdData = localStorage.getItem('boards');
+    if (recoverdData == null) {
+      localStorage.setItem('boards', JSON.stringify(this.boards));
+      localStorage.setItem('othersBoards', JSON.stringify(this.othersBoards));
+    }
+  }
 
   listBoards(): Observable<Board[]> {
     return observableOf(this.boards);
   }
   listOthersBoards(): Observable<Board[]> {
     return observableOf(this.othersBoards);
+  }
+
+  addCollaborator(collaborator: Board): void {
+    const boardC: Board[] = JSON.parse(localStorage.getItem('boards')) || [];
+    const valor = from(boardC)
+      .pipe(filter((search) => search.id === collaborator.id))
+      .subscribe((board) => {
+        const newC = {
+          uid: '2' + collaborator['collaborators'].length,
+          firstName: 'firstName',
+          lastName: 'lastName',
+          avatar: 'avatar',
+          email: 'email',
+          color: 'color'
+        };
+        board.collaborators.push(newC);
+        collaborator['collaborators'].push(newC);
+      });
+
+    localStorage.setItem('boards', JSON.stringify(boardC));
+  }
+
+  addCard(card: Board, title: string): void {
+    const boardC: Board[] = JSON.parse(localStorage.getItem('boards')) || [];
+    const valor = from(boardC)
+      .pipe(filter((search) => search.id === card.id))
+      .subscribe((board) => {
+        const newC = {
+          id: '1' + card['cards'].length,
+          name: title,
+          lists: []
+        };
+        board.cards.push(newC);
+        card['cards'].push(newC);
+      });
+
+    localStorage.setItem('boards', JSON.stringify(boardC));
   }
 }
