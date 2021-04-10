@@ -1,3 +1,4 @@
+import { BoardService } from './../../data/mock/board.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -8,7 +9,11 @@ import { Location } from '@angular/common';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-  constructor(private router: Router, public location: Location) {}
+  constructor(
+    private router: Router,
+    public location: Location,
+    public boardService: BoardService
+  ) {}
 
   ngOnInit(): void {}
 
@@ -26,5 +31,10 @@ export class NavbarComponent implements OnInit {
     } else {
       return true;
     }
+  }
+  isExit() {
+    console.log(this.boardService.isCollapse());
+
+    this.boardService.isCollapse();
   }
 }

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { BoardService } from 'src/app/data/mock/board.service';
 import { environment as env } from '../../../environments/environment';
 
 @Component({
@@ -11,8 +12,9 @@ export class FooterComponent implements OnInit {
   public readonly appVersion = env.versions.appVersion;
   public readonly appName = env.appName;
   public readonly envName = env.envName;
+  public isCollapsed = this.boardService.isCollapse();
 
-  constructor() {}
+  constructor(public readonly boardService: BoardService) {}
 
   ngOnInit(): void {}
 }

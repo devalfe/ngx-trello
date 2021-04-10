@@ -1462,15 +1462,18 @@ export class BoardService {
     const valor = from(boardC)
       .pipe(filter((search) => search.id === card.id))
       .subscribe((board) => {
-        const newC = {
+        const newCard = {
           id: '1' + card['cards'].length,
           name: title,
           lists: []
         };
-        board.cards.push(newC);
-        card['cards'].push(newC);
+        board.cards.push(newCard);
+        card['cards'].push(newCard);
       });
 
     localStorage.setItem('boards', JSON.stringify(boardC));
+  }
+  isCollapse(): boolean {
+    return true;
   }
 }
