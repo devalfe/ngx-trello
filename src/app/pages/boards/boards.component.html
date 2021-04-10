@@ -9,7 +9,7 @@
     <owl-carousel-o [options]="customOptions">
       <ng-template carouselSlide *ngFor="let board of boards$ | async">
         <div class="card">
-          <p class="title-board pl-2">{{board.boardName}}</p>
+          <p class="title-board pl-2">{{board.boardName}}-{{board.id}}</p>
           <br>
           <div class="footer-board pl-2 pb-2">
             <img class="rounded-circle circle-image"
@@ -17,39 +17,6 @@
           </div>
         </div>
       </ng-template>
-
-      <!-- <ng-template carouselSlide>
-        <div class="card">
-          <p class="title-board pl-2">Todo for today</p>
-          <br>
-          <div class="footer-board pl-2 pb-2">
-            <img class="rounded-circle circle-image"
-              src="https://pickaface.net/gallery/avatar/unr_trello_181123_1600_c8zx.png" alt="user">
-          </div>
-        </div>
-      </ng-template>
-      <ng-template carouselSlide>
-        <div class="card">
-          <p class="title-board pl-2">Todo for today</p>
-          <br>
-          <div class="footer-board pl-2 pb-2">
-            <img class="rounded-circle circle-image"
-              src="https://pickaface.net/gallery/avatar/unr_trello_181123_1600_c8zx.png" alt="user">
-          </div>
-        </div>
-      </ng-template>
-      <ng-template carouselSlide>
-        <div class="card">
-          <p class="title-board pl-2">Todo for today</p>
-          <br>
-          <div class="footer-board pl-2 pb-2">
-            <img class="rounded-circle circle-image"
-              src="https://pickaface.net/gallery/avatar/unr_trello_181123_1600_c8zx.png" alt="user">
-          </div>
-        </div>
-
-      </ng-template> -->
-
     </owl-carousel-o>
 
   </div>
@@ -60,19 +27,17 @@
         <h4 class="text-white">Others Boards</h4>
       </div>
     </div>
-    <div class="row">
-      <div class="col-6 col-sm-3 col-md-3 col-lg-2 col-xl-2">
+    <owl-carousel-o [options]="customOptions">
+      <ng-template carouselSlide *ngFor="let board of othersBoards$ | async">
         <div class="card">
-          <div class="card">
-            <p class="title-board pl-2">Todo for today</p>
-            <br>
-            <div class="footer-board pl-2">
-              2 days ago
-            </div>
+          <p class="title-board pl-2">{{board.boardName}}-{{board.id}}</p>
+          <br>
+          <div class="footer-board pl-2 pb-2">
+            <img class="rounded-circle circle-image"
+              src="https://ui-avatars.com/api/?background=0D8ABC&color=fff&name=Delix+Devalfe" alt="user">
           </div>
         </div>
-      </div>
-    </div>
+      </ng-template>
+    </owl-carousel-o>
   </div>
 </section>
-<pre>{{boards$ | async | json}}</pre>

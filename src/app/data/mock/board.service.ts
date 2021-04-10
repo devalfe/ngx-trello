@@ -11,9 +11,15 @@ export class BoardService {
     { id: '2', boardName: 'Todo for today' },
     { id: '3', boardName: 'Todo for today' }
   ];
+  public readonly othersBoards: Board[] = [
+    { id: '1', boardName: 'Todo for today' }
+  ];
   constructor() {}
 
   listBoards(): Observable<Board[]> {
     return observableOf(this.boards);
+  }
+  listOthersBoards(): Observable<Board[]> {
+    return observableOf(this.othersBoards);
   }
 }

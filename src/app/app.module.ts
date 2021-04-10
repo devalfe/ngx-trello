@@ -22,8 +22,7 @@ import { PagesModule } from './pages/pages.module';
     }),
     RouterModule,
     BrowserAnimationsModule,
-    AppRoutingModule,
-    PagesModule
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent],
