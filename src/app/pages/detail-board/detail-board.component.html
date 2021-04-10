@@ -45,7 +45,8 @@
     <form [formGroup]="userForm">
       <div class="form-group row">
         <div class="input-group col-12">
-          <input class="form-control col-12 input-form" placeholder="email@email.com" formControlName="email">
+          <input class="form-control col-12 input-form" placeholder="email@email.com" formControlName="email"
+            (keyup.enter)="addUser(); modal.close('Save click')">
           <br>
           <div class="col-12"
             *ngIf="userForm.get('email').errors && (userForm.get('email').dirty || userForm.get('email').touched)">
@@ -70,7 +71,8 @@
     <form [formGroup]="cardForm">
       <div class="form-group row">
         <div class="input-group col-12">
-          <input class="form-control col-12 input-form" placeholder="Type name of list..." formControlName="title">
+          <input class="form-control col-12 input-form" placeholder="Type name of list..." formControlName="title"
+            (keyup.enter)="addCard(); modal.close('Save click')">
           <br>
           <div class="col-12"
             *ngIf="cardForm.get('title').errors && (cardForm.get('title').dirty || cardForm.get('title').touched)">
