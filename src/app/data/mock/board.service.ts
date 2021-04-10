@@ -25,6 +25,20 @@ export class BoardService {
           avatar: 'url',
           email: 'Edu@email.com'
         }
+      ],
+      cards: [
+        {
+          id: '1',
+          name: 'Todo'
+        },
+        {
+          id: '2',
+          name: 'Todo'
+        },
+        {
+          id: '3',
+          name: 'Todos'
+        }
       ]
     },
     {
@@ -52,6 +66,16 @@ export class BoardService {
           avatar: 'url',
           email: 'Lee@email.com'
         }
+      ],
+      cards: [
+        {
+          id: '1',
+          name: 'Todo'
+        },
+        {
+          id: '2',
+          name: 'Todo'
+        }
       ]
     },
     {
@@ -78,6 +102,12 @@ export class BoardService {
           lastName: 'Moor',
           avatar: 'url',
           email: 'Eva@email.com'
+        }
+      ],
+      cards: [
+        {
+          id: '1',
+          name: 'Todo'
         }
       ]
     }
@@ -110,6 +140,16 @@ export class BoardService {
           avatar: 'url',
           email: 'Kate@email.com',
           color: 'AAACAF'
+        }
+      ],
+      cards: [
+        {
+          id: '1',
+          name: 'Todo'
+        },
+        {
+          id: '2',
+          name: 'Todo'
         }
       ]
     }

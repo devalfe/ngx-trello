@@ -16,6 +16,34 @@ export class DetailBoardComponent implements OnInit {
   public board: Board;
   public uId: string;
 
+  customOptions: any = {
+    loop: true,
+    margin: 8,
+    autoplay: false,
+    lazyLoad: true,
+    responsiveClass: true,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: false,
+    dots: false,
+    navSpeed: 700,
+    navText: ['', ''],
+    responsive: {
+      0: {
+        items: 2
+      },
+      400: {
+        items: 4
+      },
+      740: {
+        items: 7
+      },
+      940: {
+        items: 9
+      },
+      nav: false
+    }
+  };
   constructor(
     public boardService: BoardService,
     private activatedRoute: ActivatedRoute

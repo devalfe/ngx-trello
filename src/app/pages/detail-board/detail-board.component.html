@@ -17,7 +17,26 @@
         </div>
       </div>
     </div>
+    <div class="row pt-3">
+      <div class="col-1"><button class="btn-card">+</button> </div>
+      <div class="col-11">
+        <owl-carousel-o [options]="customOptions">
+          <ng-template carouselSlide *ngFor="let card of board.cards">
+            <div class="card">
+              <p class="title-board p-2 font-weight-bold">{{card.name}}-{{card.id}}</p>
+              <P class="d-flex justify-content-center btn-new-card ">
+                + Add new card
+              </P>
+              <!-- <div class="d-flex align-content-around">
+                <div class="footer-board pl-2 pb-2" *ngFor="let collaborator of board.collaborators">
+                  <img class="rounded-circle circle-image" src="{{imgApi}}{{collaborator.uid}}.jpg" alt="user">
+                </div>
+              </div> -->
+            </div>
+          </ng-template>
+        </owl-carousel-o>
+      </div>
+    </div>
   </div>
-
 </section>
-<pre>{{board | json}}</pre>
+<pre class="text-white">{{board | json}}</pre>
