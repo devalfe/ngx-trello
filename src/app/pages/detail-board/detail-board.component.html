@@ -10,21 +10,23 @@
     <div class="row">
       <div class="d-flex align-items-center align-content-center align-content-around">
         <div class="pl-3">
-          <img class="rounded-circle circle-image-btn" src="{{ 'assets/images/plus.png' }}" alt="plus">
+          <img class="rounded-circle circle-image-btn" src="{{ 'assets/images/plus.png' }}" alt="plus"
+            style="cursor: pointer;" (click)="openModalUser(content)">
         </div>
-        <div class="footer-board pl-1" *ngFor="let collaborator of board?.collaborators">
+        <div class="footer-board pl-2" *ngFor="let collaborator of board?.collaborators">
           <img class="rounded-circle circle-image" src="{{imgApi}}{{collaborator.uid}}.jpg" alt="user">
         </div>
       </div>
     </div>
     <div class="row pt-3">
-      <div class="col-1"><button class="btn-card">+</button> </div>
+      <div class="col-1"><button class="btn-card" (click)="openModalCard(card)">+</button> </div>
       <div class="col-11">
         <owl-carousel-o [options]="customOptions">
           <ng-template carouselSlide *ngFor="let card of board.cards">
             <div class="card card-board">
               <p class="title-board p-2 font-weight-bold">{{card.name}}-{{card.id}}</p>
-              <li *ngFor="let list of card.lists" style="cursor: pointer;" class="list-card m-1" href="#popup1">
+              <li *ngFor="let list of card.lists" style="cursor: pointer;" class="list-card m-1"
+                (click)="openModalList(item)">
                 {{list.title}}
               </li>
               <p class="d-flex mt-4 justify-content-center btn-new-card ">
@@ -38,3 +40,76 @@
   </div>
 </section>
 <!-- <pre class="text-white">{{board | json}}</pre> -->
+<!-- Modal -->
+<ng-template #content let-modal>
+  <div class="modal-body">
+    <form>
+      <div class="form-group row">
+        <div class="input-group col-12">
+          <input class="form-control col-12 input-form" placeholder="email@email.com">
+          <br>
+          <br>
+          <button type="button" class="btn btn-outline-primary btn-send col-12" (click)="modal.close('Save click')">Send
+            Invitation</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</ng-template>
+<!-- Modal -->
+<ng-template #card let-modal>
+  <div class="modal-body">
+    <form>
+      <div class="form-group row">
+        <div class="input-group col-12">
+          <input class="form-control col-12 input-form" placeholder="Type name of list...">
+          <br>
+          <br>
+          <button type="button" class="btn btn-outline-primary btn-send col-12"
+            (click)="modal.close('Save click')">Create List</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</ng-template>
+<!-- Modal -->
+<ng-template #item let-modal>
+  <div class="modal-header">
+    <button type="button" class="close text-left" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <div class="input-group">
+          <input class="form-control col-12 input-form font-weight-bold" placeholder="What are you looking for">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="Description">Description</label>
+        <div class="input-group">
+          <textarea class="form-control input-form" placeholder="Type description here..." rows="3"></textarea>
+        </div>
+      </div>
+      <div class="form-group">
+        <span class="badge badge-Home">Warning</span>
+        <span class="badge badge-Hacer">Warning</span>
+        <span class="badge badge-Now">Warning</span>
+      </div>
+      <div class="form-group">
+        <ul class="list-group">
+          <li class="">Morbi leo risus</li>
+          <li class="">Porta ac consectetur ac</li>
+          <li class="">Vestibulum at eros</li>
+        </ul>
+      </div>
+      <div class="form-group">
+        <div class="input-group">
+          <textarea class="form-control input-form" placeholder="Type comment here..." rows="3"></textarea>
+        </div>
+      </div>
+    </form>
+  </div>
+
+</ng-template>

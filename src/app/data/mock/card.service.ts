@@ -444,7 +444,7 @@ export class CardService {
   ];
   constructor() {}
 
-  listBoards(): Observable<Card[]> {
+  listCards(): Observable<Card[]> {
     return observableOf(this.cards);
   }
 }

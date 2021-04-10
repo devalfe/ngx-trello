@@ -73,7 +73,7 @@ export class CollaboratorService {
   ];
   constructor() {}
 
-  listBoards(): Observable<Collaborators[]> {
+  listCollaborators(): Observable<Collaborators[]> {
     return observableOf(this.collaborators);
   }
 }

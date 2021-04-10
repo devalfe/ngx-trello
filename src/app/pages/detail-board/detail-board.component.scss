@@ -45,3 +45,28 @@
 li {
   list-style: none;
 }
+
+.btn-send {
+  background-color: #4d2dd9;
+  border: 1px solid grey;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+}
+.input-form {
+  border-radius: 5px;
+  border: 1px solid #ededed;
+  background-color: #ededed;
+}
+.badge-Home {
+  color: #fff;
+  background-color: #9e997080 !important;
+}
+.badge-Hacer {
+  color: #fff;
+  background-color: #6d949880 !important;
+}
+.badge-Now {
+  color: #fff;
+  background-color: #cd6c6980 !important;
+}

@@ -5,6 +5,7 @@ import { filter } from 'rxjs/operators';
 import { from } from 'rxjs';
 import { environment as env } from '../../../environments/environment';
 import { ActivatedRoute } from '@angular/router';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'ngx-detail-board',
   templateUrl: './detail-board.component.html',
@@ -15,7 +16,7 @@ export class DetailBoardComponent implements OnInit {
   public readonly imgNameApi = env.imagenNameApi;
   public board: Board;
   public uId: string;
-
+  public closeResult = '';
   customOptions: any = {
     loop: true,
     margin: 8,
@@ -46,7 +47,8 @@ export class DetailBoardComponent implements OnInit {
   };
   constructor(
     public boardService: BoardService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private modalService: NgbModal
   ) {
     this.activatedRoute.params.subscribe((params: any) => {
       this.uId = params.id;
@@ -59,4 +61,51 @@ export class DetailBoardComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+
+  openModalUser(content) {
+    this.modalService
+      .open(content, { ariaLabelledBy: 'modal-basic-title' })
+      .result.then(
+        (result) => {
+          this.closeResult = `Closed with: ${result}`;
+        },
+        (reason) => {
+          this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+        }
+      );
+  }
+  openModalCard(card) {
+    this.modalService
+      .open(card, { ariaLabelledBy: 'modal-basic-title' })
+      .result.then(
+        (result) => {
+          this.closeResult = `Closed with: ${result}`;
+        },
+        (reason) => {
+          this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+        }
+      );
+  }
+  openModalList(item) {
+    this.modalService
+      .open(item, { ariaLabelledBy: 'modal-basic-title' })
+      .result.then(
+        (result) => {
+          this.closeResult = `Closed with: ${result}`;
+        },
+        (reason) => {
+          this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+        }
+      );
+  }
+
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return `with: ${reason}`;
+    }
+  }
 }
