@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { BoardService } from './../../data/mock/board.service';
 import { Component, OnInit } from '@angular/core';
 import { Board } from 'src/app/data/model/board';
@@ -43,10 +44,14 @@ export class BoardsComponent implements OnInit {
       nav: false
     }
   };
-  constructor(public boardService: BoardService) {
+  constructor(public boardService: BoardService, private router: Router) {
     this.boards$ = this.boardService.listBoards();
     this.othersBoards$ = this.boardService.listOthersBoards();
   }
 
   ngOnInit(): void {}
+
+  openDetail(id: string): void {
+    this.router.navigate(['/board', id]);
+  }
 }

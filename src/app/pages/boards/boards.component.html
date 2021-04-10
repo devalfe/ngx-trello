@@ -8,7 +8,7 @@
     </div>
     <owl-carousel-o [options]="customOptions">
       <ng-template carouselSlide *ngFor="let board of boards$ | async">
-        <div class="card">
+        <div class="card" (click)="openDetail(board.id)">
           <p class="title-board pl-2">{{board.boardName}}-{{board.id}}</p>
           <br>
           <div class="d-flex align-content-around">
@@ -19,7 +19,6 @@
         </div>
       </ng-template>
     </owl-carousel-o>
-
   </div>
   <div class="container-fluid">
     <div class="row">

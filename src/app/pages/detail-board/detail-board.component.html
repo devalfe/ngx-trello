@@ -22,7 +22,7 @@
       <div class="col-1"><button class="btn-card" (click)="openModalCard(card)">+</button> </div>
       <div class="col-11">
         <owl-carousel-o [options]="customOptions">
-          <ng-template carouselSlide *ngFor="let card of board.cards">
+          <ng-template carouselSlide *ngFor="let card of board?.cards">
             <div class="card card-board">
               <p class="title-board p-2 font-weight-bold">{{card.name}}-{{card.id}}</p>
               <li *ngFor="let list of card.lists" style="cursor: pointer;" class="list-card m-1"
