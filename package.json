@@ -14,7 +14,7 @@
     "build:prod": "ng build --prod --configuration=production --output-path=../dist_production/ngx-trello --base-href=/ngx-trello/",
     "format:write": "prettier src/**/*.{ts,tsx,js,jsx,json,md,css,scss,html} --write",
     "format:test": "prettier src/**/*.{ts,json,md,scss} --list-different",
-    "release": "standard-version && git push --follow-tags origin release",
+    "release": "standard-version && git push --follow-tags origin releases",
     "clean": "rm -rf ./dist/",
     "prod": "npm run clean && npm run build:prod"
   },
