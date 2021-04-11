@@ -1,0 +1,109 @@
+{
+  "configVersion": 1,
+  "timestamp": 1618106841204,
+  "index": "/ngx-trello/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/ngx-trello/4.8a9783b1acfb25478de6.js",
+        "/ngx-trello/favicon.ico",
+        "/ngx-trello/index.html",
+        "/ngx-trello/main.a43ce82c9a3b67df9a89.js",
+        "/ngx-trello/manifest.webmanifest",
+        "/ngx-trello/polyfills.f2f33e2fb40f08c51560.js",
+        "/ngx-trello/runtime.bad321c3ecfa2ea40754.js",
+        "/ngx-trello/styles.6ffa6e01abbf799badc1.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/ngx-trello/assets/icons/icon-128x128.png",
+        "/ngx-trello/assets/icons/icon-144x144.png",
+        "/ngx-trello/assets/icons/icon-152x152.png",
+        "/ngx-trello/assets/icons/icon-192x192.png",
+        "/ngx-trello/assets/icons/icon-384x384.png",
+        "/ngx-trello/assets/icons/icon-512x512.png",
+        "/ngx-trello/assets/icons/icon-72x72.png",
+        "/ngx-trello/assets/icons/icon-96x96.png",
+        "/ngx-trello/assets/images/home.png",
+        "/ngx-trello/assets/images/home@2x.png",
+        "/ngx-trello/assets/images/home@3x.png",
+        "/ngx-trello/assets/images/log-out.png",
+        "/ngx-trello/assets/images/log-out@2x.png",
+        "/ngx-trello/assets/images/log-out@3x.png",
+        "/ngx-trello/assets/images/logo.png",
+        "/ngx-trello/assets/images/logo@2x.png",
+        "/ngx-trello/assets/images/logo@3x.png",
+        "/ngx-trello/assets/images/plus.png",
+        "/ngx-trello/assets/images/plus@2x.png",
+        "/ngx-trello/assets/images/plus@3x.png",
+        "/ngx-trello/owl.video.play.7f01b07148f205f6e825.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/ngx-trello/4.8a9783b1acfb25478de6.js": "af6201fbd7304d4ac9f2b90eb7c23e8fd4537e74",
+    "/ngx-trello/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/ngx-trello/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/ngx-trello/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/ngx-trello/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/ngx-trello/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/ngx-trello/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/ngx-trello/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/ngx-trello/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/ngx-trello/assets/images/home.png": "72e0c46fa8e8341538282b5ef55db377debd5bca",
+    "/ngx-trello/assets/images/home@2x.png": "39c38a83df7e766cb0adb477ee37f499015ada37",
+    "/ngx-trello/assets/images/home@3x.png": "f0aeffe424ebcf32a48044698fec1b0d61fa5041",
+    "/ngx-trello/assets/images/log-out.png": "eef0a57547247afd0f59cd27017fa91ad0ca99b8",
+    "/ngx-trello/assets/images/log-out@2x.png": "cbc42a76af4dd465ef4c931b0f4734fe4aa9d78a",
+    "/ngx-trello/assets/images/log-out@3x.png": "c21f267a12612bc592af58abcf6c305e26689e86",
+    "/ngx-trello/assets/images/logo.png": "8349f49b16f71145002129c75ea1781defbd0572",
+    "/ngx-trello/assets/images/logo@2x.png": "1aa21a92c28d77d4d3d6e903d3eb426168362e48",
+    "/ngx-trello/assets/images/logo@3x.png": "bdc0266c0132c9a884814d8b768bbf99cf0b9c0e",
+    "/ngx-trello/assets/images/plus.png": "6e9021b7d6aaef5e93cb9168a151763fd4aeebac",
+    "/ngx-trello/assets/images/plus@2x.png": "486bb918a777cd213450dc343e38cfb8e75da80b",
+    "/ngx-trello/assets/images/plus@3x.png": "a02c481bf3bf4470ad55d6e71248de13b7d0b890",
+    "/ngx-trello/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "/ngx-trello/index.html": "f83fb126d288fccd3c26b323fd430d18ba83e6d7",
+    "/ngx-trello/main.a43ce82c9a3b67df9a89.js": "c4633315e9a90e9d9d20a377128ad2bcc36a9ae0",
+    "/ngx-trello/manifest.webmanifest": "844edcc4d0cb6f8ae36c9015a0505653d6ba1516",
+    "/ngx-trello/owl.video.play.7f01b07148f205f6e825.png": "c0d64356ec2758cb280d183b4829c923e5ff61e5",
+    "/ngx-trello/polyfills.f2f33e2fb40f08c51560.js": "cfe7b0b53e96bff9ba384b4d497c08475a617d62",
+    "/ngx-trello/runtime.bad321c3ecfa2ea40754.js": "e3f764dd68353479b4b99cc25b6dbbfaf7cbbbfa",
+    "/ngx-trello/styles.6ffa6e01abbf799badc1.css": "f706bd435ee3a590cd1971771a6484f0b36967d5"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
