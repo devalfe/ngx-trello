@@ -1,0 +1,72 @@
+.circle-image {
+  width: 10vw !important;
+  height: 10vw;
+  border: 2px solid #f34290;
+}
+.circle-image-btn {
+  width: 10vw !important;
+  height: 10vw;
+  background-color: #1f7410;
+  padding: 30%;
+}
+
+.btn-card {
+  height: 30vw;
+  width: 7vw;
+  background-color: #63e6c3;
+  border-radius: 5px;
+  border: 1px solid #97e7ed;
+  color: #fff;
+  font-size: 25px;
+  font-size-adjust: 20px;
+}
+
+.btn-new-card {
+  color: #b1b1b1;
+}
+.plus {
+  font-size: 25px;
+}
+.title-board {
+  font-size: 18px;
+  font-weight: bold;
+  color: #b1b1b1;
+  margin: 0;
+}
+.list-card {
+  border: 1px solid #ededed;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #ededed;
+  color: #575757;
+  font-size: 14px;
+  left: 15px;
+}
+li {
+  list-style: none;
+}
+
+.btn-send {
+  background-color: #4d2dd9;
+  border: 1px solid grey;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+}
+.input-form {
+  border-radius: 5px;
+  border: 1px solid #ededed;
+  background-color: #ededed;
+}
+.badge-Home {
+  color: #fff;
+  background-color: #9e997080 !important;
+}
+.badge-Hacer {
+  color: #fff;
+  background-color: #6d949880 !important;
+}
+.badge-Now {
+  color: #fff;
+  background-color: #cd6c6980 !important;
+}

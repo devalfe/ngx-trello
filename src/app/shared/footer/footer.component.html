@@ -1,0 +1,20 @@
+<footer class="page-footer py-2">
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12">
+          <div class="footer-copyright text-center py-2 text-white">
+            {{appName}} - v{{appVersion}}-{{envName}}
+            © {{anio}} Copyright
+            <a href="https://github.com/devalfe" class="text-white">@Devalfe</a>
+          </div>
+        </div>
+      </div>
+      <div [(ngbCollapse)]="isCollapsed">
+        <div class="card col-lg-12 col-md-12">
+          <div class="card-body text-primary">Sing out</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

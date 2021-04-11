@@ -1,0 +1,46 @@
+<section class="page-title" style="text-align: left;">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12 col-md-12">
+        <br>
+        <h4 class="text-white">My Boards</h4>
+      </div>
+    </div>
+    <owl-carousel-o [options]="customOptions">
+      <ng-template carouselSlide *ngFor="let board of boards">
+        <div class="card" (click)="openDetail(board.id)">
+          <p class="title-board pl-2">{{board.boardName}}-{{board.id}}</p>
+          <br>
+          <div class="d-flex align-content-around">
+            <div class="footer-board pl-2 pb-2" *ngFor="let collaborator of board.collaborators">
+              <img class="rounded-circle circle-image" src="{{imgApi}}{{collaborator.uid}}.jpg" alt="user">
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </owl-carousel-o>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12 col-md-12">
+        <br>
+        <h4 class="text-white">Others Boards</h4>
+      </div>
+    </div>
+    <owl-carousel-o [options]="customOptions">
+      <ng-template carouselSlide *ngFor="let board of othersBoards$ | async">
+        <div class="card">
+          <p class="title-board pl-2">{{board.boardName}}-{{board.id}}</p>
+          <br>
+          <div class="d-flex align-content-around">
+            <div class="footer-board pl-2 pb-2" *ngFor="let collaborator of board.collaborators">
+              <img class="rounded-circle circle-image"
+                src="{{imgNameApi}}?background={{collaborator.color}}&color=fff&name={{collaborator.firstName}}+{{collaborator.lastName}}"
+                alt="user">
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </owl-carousel-o>
+  </div>
+</section>
