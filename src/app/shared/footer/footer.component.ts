@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BoardService } from 'src/app/data/mock/board.service';
 import { environment as env } from '../../../environments/environment';
 

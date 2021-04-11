@@ -68,6 +68,7 @@ export class DetailBoardComponent implements OnInit {
       this.uId = params.id;
     });
     const boardC: Board[] = JSON.parse(localStorage.getItem('boards')) || [];
+    // eslint-disable-next-line no-unused-vars
     const valor = from(boardC)
       .pipe(filter((search) => search.id === this.uId))
       .subscribe((board) => {

@@ -3,7 +3,6 @@ import { from } from 'rxjs';
 import { of as observableOf, Observable } from 'rxjs';
 import { filter } from 'rxjs/operators';
 import { Board } from '../model/board';
-import { Collaborators } from '../model/collaborators';
 
 @Injectable({
   providedIn: 'root'
@@ -1439,6 +1438,7 @@ export class BoardService {
 
   addCollaborator(collaborator: Board): void {
     const boardC: Board[] = JSON.parse(localStorage.getItem('boards')) || [];
+    // eslint-disable-next-line no-unused-vars
     const valor = from(boardC)
       .pipe(filter((search) => search.id === collaborator.id))
       .subscribe((board) => {
@@ -1459,6 +1459,7 @@ export class BoardService {
 
   addCard(card: Board, title: string): void {
     const boardC: Board[] = JSON.parse(localStorage.getItem('boards')) || [];
+    // eslint-disable-next-line no-unused-vars
     const valor = from(boardC)
       .pipe(filter((search) => search.id === card.id))
       .subscribe((board) => {
