@@ -18,7 +18,7 @@ export class DetailBoardComponent implements OnInit {
   public readonly imgApi = env.imagenApi;
   public readonly imgNameApi = env.imagenNameApi;
   public board: Board;
-  public uId: string;
+
   public closeResult = '';
   public userForm: FormGroup;
   public cardForm: FormGroup;
@@ -65,15 +65,13 @@ export class DetailBoardComponent implements OnInit {
     this.formCard();
     this.formItem();
     this.activatedRoute.params.subscribe((params: any) => {
-      this.uId = params.id;
+      const boardC: Board[] = JSON.parse(localStorage.getItem('boards')) || [];
+      from(boardC)
+        .pipe(filter((search) => search.id === params.id))
+        .subscribe((board) => {
+          this.board = board;
+        });
     });
-    const boardC: Board[] = JSON.parse(localStorage.getItem('boards')) || [];
-    // eslint-disable-next-line no-unused-vars
-    const valor = from(boardC)
-      .pipe(filter((search) => search.id === this.uId))
-      .subscribe((board) => {
-        this.board = board;
-      });
   }
 
   ngOnInit(): void {}
