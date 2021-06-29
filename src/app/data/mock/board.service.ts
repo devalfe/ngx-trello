@@ -1438,8 +1438,7 @@ export class BoardService {
 
   addCollaborator(collaborator: Board): void {
     const boardC: Board[] = JSON.parse(localStorage.getItem('boards')) || [];
-    // eslint-disable-next-line no-unused-vars
-    const valor = from(boardC)
+    from(boardC)
       .pipe(filter((search) => search.id === collaborator.id))
       .subscribe((board) => {
         const newC = {
